@@ -48,6 +48,18 @@ app.post("/upload", (req, res) => {
   `);
 });
 
+app.post("/feedback", (req, res) => {
+  const { name, email, message, rating } = req.body;
+  res.send(`
+    <h1>Geri Bildiriminiz Alındı!</h1>
+    <p>İsim: ${name}</p>
+    <p>Email: ${email}</p>
+    <p>Mesaj: ${message}</p>
+    <p>Rating: ${rating}</p>
+    <a href="http://127.0.0.1:5500/ders4-(19.10)/feedback.html">Geri Dön</a>
+  `);
+});
+
 app.listen(PORT, () => {
   console.log(`Server çalışıyor: http://localhost:${PORT}`);
 });
