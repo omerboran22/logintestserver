@@ -20,6 +20,14 @@ const users = [
   { username: "omer", password: "1234" },
 ];
 
+app.get("/", (req, res) => {
+  res.send("Merhaba! Sunucu çalışıyor.");
+});
+
+app.get("/login", (req, res) => {
+  res.send('Login sayfası için lütfen "login.html" dosyasını kullanın.');
+});
+
 // Login endpoint
 app.post("/login", (req, res) => {
   const { username, password, remember } = req.body;
@@ -41,11 +49,19 @@ app.post("/login", (req, res) => {
   }
 });
 
+app.get("/upload", (req, res) => {
+  res.send('Dosya yükleme sayfası için lütfen "file_upload.html" dosyasını kullanın.');
+});
+
 app.post("/upload", (req, res) => {
   res.send(`
     <h1>Dosya Yüklendi!</h1>
     <a href="http://127.0.0.1:5500/ders4-(19.10)/file_upload.html">Geri Dön</a>
   `);
+});
+
+app.get("/feedback", (req, res) => {
+  res.send('Geri bildirim sayfası için lütfen "feedback.html" dosyasını kullanın.');
 });
 
 app.post("/feedback", (req, res) => {
