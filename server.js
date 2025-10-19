@@ -41,6 +41,13 @@ app.post("/login", (req, res) => {
   }
 });
 
+app.post("/upload", (req, res) => {
+  res.send(`
+    <h1>Dosya Yüklendi!</h1>
+    <a href="http://127.0.0.1:5500/ders4-(19.10)/file_upload.html">Geri Dön</a>
+  `);
+});
+
 app.listen(PORT, () => {
   console.log(`Server çalışıyor: http://localhost:${PORT}`);
 });
